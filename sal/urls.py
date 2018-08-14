@@ -10,7 +10,7 @@ Uses rest_framework_nested package to have service area as a child of a provider
 
 
 router = routers.SimpleRouter()
-router.register(r'providers', views.ProviderViewSet)
+router.register(r'providers', views.ProviderViewSet, base_name='providers')
 
 providers_router = routers.NestedSimpleRouter(
     router, r'providers', lookup='provider')

@@ -92,7 +92,6 @@ class ServiceAreaLocatorView(View):
         rows = []
         for item in list(queryset):
             row = {}
-            print(item)
             row['provider_name'] = item['provider__name']
             row['area_name'] = item['name']
             row['price'] = float(item['price'])
