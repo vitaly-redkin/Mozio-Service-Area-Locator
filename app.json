@@ -1,25 +1,21 @@
 {
   "name": "mozio-sal",
-  "scripts": {
-    "postdeploy": "python manage.py migrate"
-  },
+  "description": "Mozio Service Area Locator test task",
+  "image": "heroku/python",
+  "keywords": ["python", "django" ],
+  "addons": [ "heroku-postgresql" ],
   "env": {
-    "ENVIRONMENT": "production",
     "SECRET_KEY": {
+      "description": "The secret key for the Django application.",
       "generator": "secret"
     }
   },
-  "formation": {
-    "web": {
-      "quantity": 1
+  "environments": {
+    "test": {
+      "scripts": {
+        "test-setup": "python manage.py collectstatic --noinput",
+        "test2": "python manage.py test"
+      }
     }
-  },
-  "addons": [
-    "heroku-postgresql"
-  ],
-  "buildpacks": [
-    {
-      "url": "heroku/python"
-    }
-  ]
-}
+  }
+} 
