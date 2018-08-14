@@ -18,7 +18,7 @@ providers_router.register(
     r'serviceareas', views.ServiceAreaViewSet, base_name='provider-serviceareas')
 
 urlpatterns = [
-    path('locator/<lat>/<lng>',
+    path('locator/<lat>/<lng>/',
          views.ServiceAreaLocatorView.as_view(), name='locator'),
     url(r'^', include(router.urls), ),
     url(r'^', include(providers_router.urls)),
