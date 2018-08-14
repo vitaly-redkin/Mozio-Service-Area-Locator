@@ -69,3 +69,17 @@ updates all service area fields
 </pre>            
 updates some service area fields
 - DELETE removes the service area
+
+5. /locator/:lat/:lng/
+- GET returns the list of areas (for all providers) the point with (lat, lang) belongs to. Returned data is array of JSON objects sorted by price:
+<pre>
+[
+  {
+    "provider_name": "Provider 1",
+    "area_name": "Area 1",
+    "price": 123.45,
+    "currency": "USD"
+  },
+  ...
+]  
+</pre>
